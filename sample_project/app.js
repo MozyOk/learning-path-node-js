@@ -1,17 +1,22 @@
 const express = require('express');
 const app = express();
 const message = require('./messege.js');
+let all_letters = ' ';
 
 console.log(message["letters"]);
 
-// app.get("/", function(request,response){
-//   response.send("<h1 style='text-align:center'>Hey friends, welcome to my app</h1>");
-// })
+app.get("/", function(request,response){
 
-// app.listen(3000, function(error){
-//   if(error == true){
-//     console.log("some error occured");
-//   }else{
-//     console.log("listening on localhost:3000");
-//   }
-// })
+  for(let i = 0; i <= message["letters"].length -1; i++){
+    all_letters += message["letters"][i] + " \n";
+  }
+  response.send(all_letters);
+})
+
+app.listen(3000, function(error){
+  if(error == true){
+    console.log("some error occured");
+  }else{
+    console.log("listening on localhost:3000");
+  }
+})
