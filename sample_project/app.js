@@ -8,7 +8,7 @@ console.log(message["letters"]);
 app.get("/", function(request,response){
 
   for(let i = 0; i <= message["letters"].length -1; i++){
-    all_letters += message["letters"][i] + " \n";
+    all_letters += message["letters"][i] + " <br/>";
   }
   response.send(all_letters);
 })
